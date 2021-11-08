@@ -34,7 +34,7 @@ class MRPlatform {
 		this.apiKey = config["apiKey"]
 		this.networkId = config["networkId"]
 		this.timeout = config["timeout"] === undefined ? timeout : config["timeout"]
-			this.refreshInterval = config["refreshInterval"] === undefined ? (interval * 60000) : (config["refreshInterval"] * 60000)
+		this.refreshInterval = config["refreshInterval"] === undefined ? (interval * 60000) : (config["refreshInterval"] * 60000)
 		this.debug = config["debug"] === undefined ? debug : config["debug"]
 		this.accessories = []
 		this.session = axios.create({
