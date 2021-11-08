@@ -1,8 +1,14 @@
 # A [Cisco Meraki](https://meraki.cisco.com) Wireless plugin for [Homebridge](https://github.com/nfarina/homebridge).  
 
-This creates a Light Switch in homekit for the status of an SSID using the Meraki Dashboard API.
+---
 
-![alt text](example.png "Dashboard Example Screenshot")
+# Purpose
+
+The purpose of this code is to create a Homebridge plugin to allow a wireless administrator to enable or disable a WLAN through a Light Switch control in Apple’s homekit or through Siri.
+
+![alt text](mreexample.png "Dashboard Example Screenshot")
+
+![alt text](mreexample2.png "WLANs Example Screenshot")
 
 # Installation
 Run these commands:
