@@ -64,7 +64,10 @@ To make your Meraki Dashboard account work with the plugin:
 4. Save Changes, then scroll to the top, click on your username on the right & click My Profile.
 5. Scroll down towards the bottom and under API Access, click on Generate API Key.
 6. Write down or copy the API Key.
-7. Create your config file according to the above example (or using the Homebridge UI).
+7. In the same browser, go to https://api.meraki.com/api/v0/organizations
+8. Use the resulting org id to browse to https://https://api.meraki.com/api/v0/organizations/{orgID}/networks
+9. Write down the network id(s) for the network(s) that you want to control.
+10. Create your config file according to the above example (or using the Homebridge UI).
 
 
 # More information
