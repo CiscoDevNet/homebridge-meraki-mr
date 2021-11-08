@@ -6,9 +6,9 @@
 
 The purpose of this code is to create a Homebridge plugin to allow a wireless administrator to enable or disable a WLAN through a Light Switch control in Apple’s homekit or through Siri.
 
-![alt text](mreexample.png "Dashboard Example Screenshot")
+![alt text](mrexample.png "Dashboard Example Screenshot")
 
-![alt text](mreexample2.png "WLANs Example Screenshot")
+![alt text](mrexample2.png "WLANs Example Screenshot")
 
 # Installation
 Run these commands:
@@ -34,7 +34,7 @@ Example accessory config (needs to be added to the homebridge config.json):
 			"name": "Meraki WiFi",
 			"apiKey": "4854372bf7b61bdb701512314e3134bcb3e61b85",
 			"timeout": 10000,
-			"refreshInterval": 60000,
+			"refreshInterval": 15,
 			"debug": false;
 			"networks": [
 				{
