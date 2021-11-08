@@ -118,10 +118,8 @@ class MRPlatformAccessory {
 			}).catch(err => {
 					this.platform.log.error('Error getting WLAN state %s',err)
 			})
-//			this.platform.log('During poll, SSIDs response %s', response.data)
 			for (let i = 0; i < this.accessory.context.device.wlanCount; i++) {
 				let obj = response.data.find(o => o.number === this.accessory.context.device.ssidList[i].wlanNumber)
-//				this.platform.log('Obj for SSID %s', this.accessory.context.device.ssidList[i].ssid, obj)
 				this.accessory.context.device.ssidList[i].state = obj.enabled				
 				this.updateUI(i)
 			}
