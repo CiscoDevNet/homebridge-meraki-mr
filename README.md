@@ -23,25 +23,25 @@ Then all subsequent installations must be like this:
 Example accessory config (needs to be added to the homebridge config.json):
  ...
 
-  "platforms": [
-    {
-      "name": "Meraki WiFi",
-      "apiKey": "4854372bf7b61bdb701512314e3134bcb3e61b85",
-      "timeout": 10000,
-      "debug": false;
-      "networks": [
-        {
-          "displayName": "Site 1",
-          "networkId": "L_012345678901234501"
-        },
-        {
-          "displayName": "Site 2",
-          "networkId": "L_012345678901234502"
-        }
-      ],
-      "platform": "Meraki MR"
-    }
-  ]
+	"platforms": [
+		{
+			"name": "Meraki WiFi",
+			"apiKey": "4854372bf7b61bdb701512314e3134bcb3e61b85",
+			"timeout": 10000,
+			"debug": false;
+			"networks": [
+				{
+					"displayName": "Site 1",
+					"networkId": "L_012345678901234501"
+				},
+				{
+					"displayName": "Site 2",
+					"networkId": "L_012345678901234502"
+				}
+			],
+			"platform": "Meraki MR"
+		}
+	]
  ...
 
 ### Config Explanation:
