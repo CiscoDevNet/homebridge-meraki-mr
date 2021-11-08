@@ -1,0 +1,52 @@
+{
+  "pluginAlias": "Meraki MR",
+  "pluginType": "platform",
+  "schema": {
+		"name": {
+			"title": "Name",
+			"type": "string",
+			"required": true,
+			"default": "Meraki WiFi"
+		},
+		"apiKey": {
+			"title": "API Key",
+			"type": "string",
+			"required": true,
+			"default": ""
+		},
+		"timeout": {
+			"title": "Timeout",
+			"type": "integer",
+			"required": false,
+			"default": false,
+			"description": "Specifies the number of milliseconds before the request times out. Default is 10000."
+		},
+		"debug": {
+			"title": "Debug",
+			"type": "boolean",
+			"required": false,
+			"default": false
+		},
+		"networks": {
+			"type": "array",
+			"items": {
+				"title": "Network Config",
+				"type": "object",
+				"properties": {
+					"displayName": {
+						"title": "Network Name",
+						"type": "string",
+						"required": true,
+						"default": "My Site"
+					},
+					"networkId": {
+						"title": "Network ID",
+						"type": "string",
+						"required": true,
+						"default": ""
+					}
+				}
+			}
+		}
+  }
+}

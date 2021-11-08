@@ -1,0 +1,30 @@
+{
+  "name": "homebridge-meraki-mr",
+  "version": "0.0.1",
+  "author": "ecoen66",
+  "description": "Meraki Wireless automation, via Homebridge.",
+  "license": "MIT",
+  "keywords": [
+    "homebridge-plugin",
+    "cisco",
+    "meraki",
+    "MR",
+    "WLAN",
+    "SSID"
+  ],
+  "dependencies": {
+    "axios": "^0.23.0"
+  },
+  "engines": {
+    "homebridge": ">=1.3.5",
+    "node": ">=16.13.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CiscoDevNet/homebridge-meraki-mr.git"
+  },
+  "bugs": {
+    "url": "https://github.com/CiscoDevNet/homebridge-meraki-mr/issues"
+  },
+  "homepage": "https://github.com/CiscoDevNet/homebridge-meraki-mr"
+}
