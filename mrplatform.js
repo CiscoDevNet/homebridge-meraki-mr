@@ -17,7 +17,7 @@ const MRPlatformAccessory=require('./mrplatformAccessory')
 const baseUrlV0 = "https://api.meraki.com/api/v0"
 const baseUrlV1 = "https://api.meraki.com/api/v1"
 const timeout = 10000
-const interval = 60000
+const interval = 15 // Minutes
 const debug = false
 const	PluginName = packageJson.name
 const version = packageJson.version
@@ -34,7 +34,7 @@ class MRPlatform {
 		this.apiKey = config["apiKey"]
 		this.networkId = config["networkId"]
 		this.timeout = config["timeout"] === undefined ? timeout : config["timeout"]
-		this.refreshInterval = config["refreshInterval"] === undefined ? interval : config["refreshInterval"]
+			this.refreshInterval = config["refreshInterval"] === undefined ? (interval * 60000) : (config["refreshInterval"] * 60000)
 		this.debug = config["debug"] === undefined ? debug : config["debug"]
 		this.accessories = []
 		this.session = axios.create({

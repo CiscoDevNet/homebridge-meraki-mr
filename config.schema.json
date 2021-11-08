@@ -24,7 +24,7 @@
 			"title": "Refresh Interval",
 			"type": "integer",
 			"required": false,
-			"description": "Specifies the number of milliseconds between WiFi status polls and updates. Default is 60000."
+			"description": "Specifies the number of minutes between WiFi status polls and updates. Default is 15."
 		},
 		"debug": {
 			"title": "Debug",

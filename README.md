@@ -53,7 +53,7 @@ Field           						| Description
 **name**										| (required) The internal name you want to use for the platform within Homebridge.
 **apiKey**									| (required) The Meraki API Key used to access the Meraki Dashboard.
 **timeout**									| (optional) The timeout duration in ms for the web API calls.
-**refreshInterval**					| (optional) The refresh interval in ms for polling the WiFi status.
+**refreshInterval**					| (optional) The refresh interval in minutes for polling the WiFi status.
 **debug**										| (optional) Enables additional logging.
 **displayName**							| (required) The name you want to show for the WLC in homekit.
 **networkId**								| (required) The Meraki Network ID for the site or network.
