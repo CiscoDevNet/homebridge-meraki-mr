@@ -1,6 +1,6 @@
 {
   "name": "homebridge-meraki-mr",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "ecoen66",
   "description": "Meraki Wireless automation, via Homebridge.",
   "license": "MIT",

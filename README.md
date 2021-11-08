@@ -28,6 +28,7 @@ Example accessory config (needs to be added to the homebridge config.json):
 			"name": "Meraki WiFi",
 			"apiKey": "4854372bf7b61bdb701512314e3134bcb3e61b85",
 			"timeout": 10000,
+			"refreshInterval": 60000,
 			"debug": false;
 			"networks": [
 				{
@@ -52,6 +53,7 @@ Field           						| Description
 **name**										| (required) The internal name you want to use for the platform within Homebridge.
 **apiKey**									| (required) The Meraki API Key used to access the Meraki Dashboard.
 **timeout**									| (optional) The timeout duration in ms for the web API calls.
+**refreshInterval**					| (optional) The refresh interval in ms for polling the WiFi status.
 **debug**										| (optional) Enables additional logging.
 **displayName**							| (required) The name you want to show for the WLC in homekit.
 **networkId**								| (required) The Meraki Network ID for the site or network.

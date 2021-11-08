@@ -25,7 +25,7 @@ class MRPlatformAccessory {
       // register handlers for the On/Off Characteristic
       switchService.getCharacteristic(this.platform.Characteristic.On)
         .on('set', this.setPowerState.bind(this, i))   // SET - bind to the `setPowerState` method below
-        .on('get', this.getPowerState.bind(this, i))		// GET - bind to the `getPowerState` method below
+//        .on('get', this.getPowerState.bind(this, i))		// GET - bind to the `getPowerState` method below
     }
  
     // set accessory information
@@ -35,9 +35,10 @@ class MRPlatformAccessory {
       .setCharacteristic(this.platform.Characteristic.Model, this.accessory.context.device.model)
       .setCharacteristic(this.platform.Characteristic.SerialNumber, this.accessory.context.device.serial)
       .setCharacteristic(this.platform.Characteristic.FirmwareRevision, this.accessory.context.device.firmware)
-//		this.timer = setTimeout(this.poll.bind(this), this.platform.refreshInterval)
+		this.timer = setTimeout(this.poll.bind(this), this.platform.refreshInterval)
+		this.poll()
 	}
-
+/*
 	async getPowerState(index, callback) {
 		try {
 			const response = await this.platform.session({
@@ -62,7 +63,7 @@ class MRPlatformAccessory {
 			callback (err, null)
 		}
 	}
-
+*/
 	async setPowerState(index, powerState, callback) {
 		try {
 //			this.platform.log('Setting WLAN state for %s = %s', this.accessory.context.device.ssidList[index].ssid, powerState)
@@ -96,21 +97,40 @@ class MRPlatformAccessory {
 	async updateUI(index) {
 		setTimeout( () => {
 			this.accessory.services[index+1].getCharacteristic(Characteristic.On).updateValue(this.accessory.context.device.ssidList[index].state)
-			if (this.debug) this.platform.log(this.accessory.context.device.ssidList[index].ssid + " = " + this.accessory.context.device.ssidList[index].wlanNumber)
+			if (this.platform.debug) this.platform.log(this.accessory.context.device.ssidList[index].ssid + " = " + this.accessory.context.device.ssidList[index].state)
 		}, 100)
 	}
 	
-/*	async poll() {
+	async poll() {
 		if(this.timer) clearTimeout(this.timer)
 		this.timer = null
-		for (let i = 0; i < this.accessory.context.device.wlanCount; i++) {
-			this.getPowerState( i, function (err, powerState) {
-				this.updateUI(i)
+		try {
+			const response = await this.platform.session({
+				method: 'get',
+				url: baseUrlV0 + "/networks/" + this.accessory.context.device.networkId + "/ssids",
+				data: {},
+				headers: {
+					"X-Cisco-Meraki-API-Key": this.platform.apiKey,
+					"Accept": "application/json",
+					"Content-Type": "application/json"
+				},
+				timeout: this.platform.timeout
+			}).catch(err => {
+					this.platform.log.error('Error getting WLAN state %s',err)
 			})
+//			this.platform.log('During poll, SSIDs response %s', response.data)
+			for (let i = 0; i < this.accessory.context.device.wlanCount; i++) {
+				let obj = response.data.find(o => o.number === this.accessory.context.device.ssidList[i].wlanNumber)
+//				this.platform.log('Obj for SSID %s', this.accessory.context.device.ssidList[i].ssid, obj)
+				this.accessory.context.device.ssidList[i].state = obj.enabled				
+				this.updateUI(i)
+			}
+		}catch(err) {
+				this.platform.log.error('Error getting WLAN state %s',err)
 		}
 		this.timer = setTimeout(this.poll.bind(this), this.platform.refreshInterval)
 	}
-*/
+
 }
 
 module.exports=MRPlatformAccessory;
