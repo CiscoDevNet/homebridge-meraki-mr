@@ -1,3 +1,8 @@
+
+[![npm](https://badgen.net/npm/v/homebridge-meraki-mr)](https://www.npmjs.com/package/homebridge-meraki-mr)
+[![npm](https://badgen.net/npm/dw/homebridge-meraki-mr)](https://www.npmjs.com/package/homebridge-meraki-mr)
+[![npm](https://badgen.net/npm/dt/homebridge-meraki-mr)](https://www.npmjs.com/package/homebridge-meraki-mr)
+
 # A [Cisco Meraki](https://meraki.cisco.com) Wireless plugin for [Homebridge](https://github.com/nfarina/homebridge).  
 
 ---
