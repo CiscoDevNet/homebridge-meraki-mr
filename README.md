@@ -1,7 +1,6 @@
 
-[![npm](https://badgen.net/npm/v/homebridge-meraki-mr)](https://www.npmjs.com/package/homebridge-meraki-mr)
-[![npm](https://badgen.net/npm/dw/homebridge-meraki-mr)](https://www.npmjs.com/package/homebridge-meraki-mr)
-[![npm](https://badgen.net/npm/dt/homebridge-meraki-mr)](https://www.npmjs.com/package/homebridge-meraki-mr)
+[![published](https://static.production.devnetcloud.com/codeexchange/assets/images/devnet-published.svg)](https://developer.cisco.com/codeexchange/github/repo/CiscoDevNet/homebridge-meraki-mr)
+[![npm](https://badgen.net/npm/v/homebridge-meraki-mr)](https://www.npmjs.com/package/homebridge-meraki-mr)[![npm](https://badgen.net/npm/dw/homebridge-meraki-mr)](https://www.npmjs.com/package/homebridge-meraki-mr)[![npm](https://badgen.net/npm/dt/homebridge-meraki-mr)](https://www.npmjs.com/package/homebridge-meraki-mr)
 
 # A [Cisco Meraki](https://meraki.cisco.com) Wireless plugin for [Homebridge](https://github.com/nfarina/homebridge).  
 
