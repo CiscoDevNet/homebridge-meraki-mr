@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## 0.1.1 (2023-12-05)
+
+#### Changes
+
+- Updated API request in platform accessory.
+
 ## 0.1.0 (2023-12-05)
 
 #### Changes

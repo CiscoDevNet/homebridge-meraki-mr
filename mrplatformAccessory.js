@@ -1,5 +1,4 @@
 'use strict'
-const baseUrlV0 = "https://api.meraki.com/api/v0"
 const baseUrlV1 = "https://api.meraki.com/api/v1"
 
 /**
@@ -43,7 +42,7 @@ class MRPlatformAccessory {
 		try {
 			const response = await this.platform.session({
 				method: 'get',
-				url: baseUrlV0 + "/networks/" + this.accessory.context.device.networkId + "/ssids/" + this.accessory.context.device.ssidList[index].wlanNumber,
+				url: baseUrlV1 + "/networks/" + this.accessory.context.device.networkId + "/ssids/" + this.accessory.context.device.ssidList[index].wlanNumber,
 				data: {},
 				headers: {
 					"X-Cisco-Meraki-API-Key": this.platform.apiKey,
@@ -69,7 +68,7 @@ class MRPlatformAccessory {
 //			this.platform.log('Setting WLAN state for %s = %s', this.accessory.context.device.ssidList[index].ssid, powerState)
 			const response = await this.platform.session({
 				method: 'put',
-				url: baseUrlV0 + "/networks/" + this.accessory.context.device.networkId + "/ssids/" +  this.accessory.context.device.ssidList[index].wlanNumber,
+				url: baseUrlV1 + "/networks/" + this.accessory.context.device.networkId + "/wireless/ssids/" +  this.accessory.context.device.ssidList[index].wlanNumber,
 				data: { 'enabled': powerState},
 				headers: {
 					"X-Cisco-Meraki-API-Key": this.platform.apiKey,
@@ -107,7 +106,7 @@ class MRPlatformAccessory {
 		try {
 			const response = await this.platform.session({
 				method: 'get',
-				url: baseUrlV0 + "/networks/" + this.accessory.context.device.networkId + "/ssids",
+				url: baseUrlV1 + "/networks/" + this.accessory.context.device.networkId + "/wireless/ssids",
 				data: {},
 				headers: {
 					"X-Cisco-Meraki-API-Key": this.platform.apiKey,
