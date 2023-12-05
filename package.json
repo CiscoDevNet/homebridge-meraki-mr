@@ -1,6 +1,6 @@
 {
   "name": "homebridge-meraki-mr",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "author": "ecoen66",
   "description": "Meraki Wireless automation, via Homebridge.",
   "license": "MIT",
@@ -13,11 +13,11 @@
     "SSID"
   ],
   "dependencies": {
-    "axios": "^0.24.0"
+    "axios": "^1.6.0"
   },
   "engines": {
-    "homebridge": ">=1.3.9",
-    "node": ">=16.13.1"
+    "homebridge": ">=1.7.0",
+    "node": ">=20.9.0"
   },
   "repository": {
     "type": "git",

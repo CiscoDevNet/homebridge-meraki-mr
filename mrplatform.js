@@ -14,7 +14,6 @@ axios.defaults.withCredentials = true
 const packageJson=require('./package')
 const MRPlatformAccessory=require('./mrplatformAccessory')
 
-const baseUrlV0 = "https://api.meraki.com/api/v0"
 const baseUrlV1 = "https://api.meraki.com/api/v1"
 const timeout = 10000
 const interval = 15 // Minutes
@@ -105,10 +104,10 @@ class MRPlatform {
 				}
 			}
 
-			this.session.get(baseUrlV0 + "/networks/" + networkDevice.networkId + "/ssids", webConfig)
+			this.session.get(baseUrlV1 + "/networks/" + networkDevice.networkId + "/wireless/ssids", webConfig)
 				.then(resp => {
 					if (this.debug) {
-						this.log(baseUrlV0 + "/networks/" + networkDevice.networkId + "/ssids");
+						this.log(baseUrlV1 + "/networks/" + networkDevice.networkId + "/wireless/ssids");
 					}
 					networkDevice.wlanCount = Object.keys(resp.data).length;
 					this.log("Dashboard response: " + networkDevice.wlanCount + " SSID(s).");
